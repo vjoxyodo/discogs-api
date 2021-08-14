@@ -1,0 +1,34 @@
+{
+  "name": "vjoxyodo/discogs",
+  "description": "Laravel Library to use Discogs API",
+  "keywords":[
+    "Discogs",
+    "discogs",
+    "DiscogsAPI"
+  ],
+  "homepage":"https://github.com/vjoxyodo/discogs",
+  "type": "library",
+  "license": "GPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "Pedro Lopes aka vjoxyodo",
+      "email": "vjoxyodo@gmail.com"
+    }
+  ],
+  "prefer-stable": true,
+  "require": {
+    "php": ">=7.2.0"
+  },
+  "autoload": {
+    "psr-4" : {
+      "Vjoxyodo\\DiscogsAPI\\" : "src"
+    }
+  },
+  "extra":{
+    "laravel": {
+        "providers": [
+            "Vjoxyodo\\DiscogsAPI"
+        ]
+    }
+  }
+}
