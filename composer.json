@@ -25,10 +25,10 @@
             "Vjoxyodo\\DiscogsAPI"
         ]
     }
-  }
+  },
   "autoload": {
     "psr-4" : {
       "Vjoxyodo\\DiscogsAPI\\" : "src"
     }
-  },
+  }
 }
