@@ -22,7 +22,7 @@
   "extra":{
     "laravel": {
         "providers": [
-            "Vjoxyodo\\DiscogsApi\\DiscogsApi\\DiscogsServiceProvider"
+            "Vjoxyodo\\DiscogsApi\\DiscogsServiceProvider"
         ]
     }
   },
