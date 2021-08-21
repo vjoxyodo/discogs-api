@@ -1,39 +1,39 @@
 {
-  "name": "vjoxyodo/discogsapi",
-  "type": "library",
-  "description": "Laravel Library to use Discogs API",
-  "keywords":[
-    "Discogs",
-    "discogs",
-    "DiscogsAPI"
-  ],
-  "homepage":"https://github.com/vjoxyodo/discogsapi",
-  "license": "GPL-3.0-or-later",
-  "authors": [
-    {
-      "name": "Pedro Lopes aka vjoxyodo",
-      "email": "vjoxyodo@gmail.com"
-    }
-  ],
-  "require": {
-    "php": ">=7.2.0"
-  },
-  "prefer-stable": true,
-  "extra":{
-    "laravel": {
-        "providers": [
-            "Vjoxyodo\\DiscogsApi\\DiscogsServiceProvider"
-        ]
-    }
-  },
-  "autoload": {
-    "psr-4" : {
-      "Vjoxyodo\\Discogsapi\\" : "src/"
-    }
-  },
-  "require-dev": {
-    "phpunit/phpunit": "^9.5",
-    "orchestra/testbench": "^6.0"
-  }
+	"name": "vjoxyodo/discogsapi",
+	"type": "library",
+	"description": "Laravel Library to use Discogs API",
+	"keywords":[
+		"Discogs",
+		"discogs",
+    	"DiscogsAPI"
+	],
+	"homepage":"https://github.com/vjoxyodo/discogsapi",
+	"license": "GPL-3.0-or-later",
+	"authors": [
+    	{
+			"name": "Pedro Lopes aka vjoxyodo",
+			"email": "vjoxyodo@gmail.com"
+    	}
+	],
+	"require": {
+		"php": ">=7.2.0"
+  	},
+  	"prefer-stable": true,
+  	"autoload": {
+    	"psr-4" : {
+			"Vjoxyodo\\DiscogsApi\\" : "src/"
+    	}
+  	},
+  	"extra":{
+    	"laravel": {
+        	"providers": [
+            	"Vjoxyodo\\DiscogsApi\\DiscogsServiceProvider"
+			]
+    	}
+  	},
+  	"require-dev": {
+    	"phpunit/phpunit": "^9.5",
+		"orchestra/testbench": "^6.0"
+  	}
 }
 

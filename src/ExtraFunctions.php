@@ -6,7 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Jolita\DiscogsApi\DiscogsApi;
 use GuzzleHttp\Client;
 
-class ExtraFunctions extends DiscogsServiceProvider
+class ExtraFunctions
 {
 	
 
