@@ -3,7 +3,7 @@
 namespace Vjoxyodo\DiscogsAPI;
 
 use Illuminate\Support\ServiceProvider;
-use Jolita\DiscogsApi\DiscogsApi;
+use Vjoxyodo\DiscogsApi;
 use GuzzleHttp\Client;
 
 class DiscogsServiceProvider extends ServiceProvider
