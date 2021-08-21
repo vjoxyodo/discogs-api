@@ -6,14 +6,14 @@ use Illuminate\Support\ServiceProvider;
 use Jolita\DiscogsApi\DiscogsApi;
 use GuzzleHttp\Client;
 
-class DiscogsServiceProvider extends ServiceProvider
+class DiscogsOAuth extends ExtraFunctions
 {
     /**
      * Bootstrap the application services.
      */
-    public function boot()
+    public function __construct()
     {
-        $this->publishes([
-            __DIR__.'/../config/discogs.php' => config_path('discogs.php'),
-        ], 'config');
+		
     }
+
+}

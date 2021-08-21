@@ -4,6 +4,7 @@ composer.lock
 docs
 /vendor/
 /tests/
+/oauth_token/
 
 node_modules/
 npm-debug.log
