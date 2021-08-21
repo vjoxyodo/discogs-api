@@ -1,6 +1,6 @@
 <?php
 	
-namespace Vjoxyodo\Discogsapi;
+namespace Vjoxyodo\DiscogsApi;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -33,8 +33,8 @@ class DiscogsFactory extends DiscogsOAuth
 				"oauth_secret"	=> self::$access_token_secret,
         );
         
-        var_dump(DiscogsServiceProvider::register());
-        exit();
+        #var_dump(__DIR__);
+       # exit();
 
     }
     

@@ -1,9 +1,8 @@
 <?php
 
-namespace Vjoxyodo\Discogsapi;
+namespace Vjoxyodo\DiscogsApi;
 
 use Illuminate\Support\ServiceProvider;
-use Vjoxyodo\DiscogsApi;
 use GuzzleHttp\Client;
 
 class DiscogsServiceProvider extends ServiceProvider

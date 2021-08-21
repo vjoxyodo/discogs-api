@@ -1,12 +1,12 @@
 <?php
 
-namespace Vjoxyodo\Discogsapi;
+namespace Vjoxyodo\DiscogsApi;
 
 use Illuminate\Support\ServiceProvider;
 use Jolita\DiscogsApi\DiscogsApi;
 use GuzzleHttp\Client;
 
-class ExtraFunctions
+class ExtraFunctions extends DiscogsServiceProvider
 {
 	
 
