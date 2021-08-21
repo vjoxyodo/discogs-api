@@ -1,5 +1,5 @@
 {
-	"name": "vjoxyodo/discogsapi",
+	"name": "vjoxyodo/discogs-api",
 	"type": "library",
 	"description": "Laravel Library to use Discogs API",
 	"keywords":[
