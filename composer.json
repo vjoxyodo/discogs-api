@@ -22,13 +22,13 @@
   "extra":{
     "laravel": {
         "providers": [
-            "Vjoxyodo\\DiscogsApi\\DiscogsApi"
+            "Vjoxyodo\\DiscogsApi\\DiscogsApi\\DiscogsServiceProvider"
         ]
     }
   },
   "autoload": {
     "psr-4" : {
-      "Vjoxyodo\\Discogsapi\\DiscogsApi\\" : "src"
+      "Vjoxyodo\\Discogsapi\\" : "src/"
     }
   },
   "require-dev": {
