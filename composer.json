@@ -7,7 +7,7 @@
     "discogs",
     "DiscogsAPI"
   ],
-  "homepage":"https://github.com/vjoxyodo/discogs",
+  "homepage":"https://github.com/vjoxyodo/discogsapi",
   "license": "GPL-3.0-or-later",
   "authors": [
     {
@@ -22,13 +22,13 @@
   "extra":{
     "laravel": {
         "providers": [
-            "Vjoxyodo\\DiscogsAPI"
+            "Vjoxyodo\\DiscogsApi\\DiscogsApi"
         ]
     }
   },
   "autoload": {
     "psr-4" : {
-      "Vjoxyodo\\DiscogsAPI\\" : "src"
+      "Vjoxyodo\\Discogsapi\\DiscogsApi" : "src"
     }
   },
   "require-dev": {

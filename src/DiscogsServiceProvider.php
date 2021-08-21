@@ -1,6 +1,6 @@
 <?php
 
-namespace Vjoxyodo\DiscogsAPI;
+namespace Vjoxyodo\Discogsapi;
 
 use Illuminate\Support\ServiceProvider;
 use Vjoxyodo\DiscogsApi;

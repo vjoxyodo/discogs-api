@@ -1,6 +1,6 @@
 <?php
 
-namespace Vjoxyodo\DiscogsAPI;
+namespace Vjoxyodo\Discogsapi;
 
 class OAuthSimple extends DiscogsServiceProvider
 {
