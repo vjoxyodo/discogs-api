@@ -24,11 +24,10 @@ class DiscogsServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__.'/../config/discogs-api.php', 'discogs-api');
         
-
         $this->app->singleton('discogs-api', function () {
 
             $config = config('discogs-api');
-
+ 
             return new DiscogsApi();
         });
         

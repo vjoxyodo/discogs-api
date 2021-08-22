@@ -20,15 +20,15 @@ class DiscogsFactory extends OAuthSimple
     public function __construct()
     {
 		parent::__construct();
-		
-		self::$consumer_key = (class_exists('config') && config('discogs-api.consumer_key')) ? config('discogs-api.consumer_key') : $_ENV['consumer_key']; 
-		self::$consumer_shared_secret = (class_exists('config') && config('discogs-api.consumer_shared_secret')) ? config('discogs-api.consumer_shared_secret') : $_ENV['consumer_shared_secret']; 
-		self::$user_agent = (class_exists('config') && config('discogs-api.user_agent')) ? config('discogs-api.user_agent') : $_ENV['user_agent'];  
-		self::$oauth_verifier = (class_exists('config') && config('discogs-api.oauth_verifier')) ? config('discogs-api.oauth_verifier') : $_ENV['oauth_verifier'];  
-		self::$oauth_token = (class_exists('config') && config('discogs-api.oauth_token')) ? config('discogs-api.oauth_token') : $_ENV['oauth_token']; 
+			
+		self::$consumer_key = ($_ENV['consumer_key']) ? $_ENV['consumer_key'] : config('discogs-api.consumer_key') ; 
+		self::$consumer_shared_secret = ($_ENV['consumer_shared_secret']) ?  $_ENV['consumer_shared_secret'] : config('discogs-api.consumer_shared_secret') ; 
+		self::$user_agent = ($_ENV['user_agent']) ? $_ENV['user_agent'] :  config('discogs-api.user_agent');  
+		self::$oauth_verifier = ($_ENV['oauth_verifier']) ? $_ENV['oauth_verifier'] :  config('discogs-api.oauth_verifier');  
+		self::$oauth_token = ($_ENV['oauth_token']) ? $_ENV['oauth_token'] : config('discogs-api.oauth_token'); 
 
-		self::$access_token = (class_exists('config') && config('discogs-api.access_token')) ? config('discogs-api.access_token') : $_ENV['access_token']; 
-		self::$access_token_secret = (class_exists('config') && config('discogs-api.access_token_secret')) ? config('discogs-api.access_token_secret') : $_ENV['access_token_secret']; 
+		self::$access_token = ($_ENV['access_token']) ? $_ENV['access_token'] :  config('discogs-api.access_token'); 
+		self::$access_token_secret = ($_ENV['access_token_secret']) ? $_ENV['access_token_secret'] :  config('discogs-api.access_token_secret'); 
 		
 		self::$oauth_props = array(
 				"oauth_token"	=> self::$access_token,
