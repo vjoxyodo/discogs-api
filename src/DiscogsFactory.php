@@ -20,7 +20,7 @@ class DiscogsFactory extends OAuthSimple
     public function __construct()
     {
 		parent::__construct();
-
+		
 		self::$consumer_key = (class_exists('config') && config('discogs-api.consumer_key')) ? config('discogs-api.consumer_key') : $_ENV['consumer_key']; 
 		self::$consumer_shared_secret = (class_exists('config') && config('discogs-api.consumer_shared_secret')) ? config('discogs-api.consumer_shared_secret') : $_ENV['consumer_shared_secret']; 
 		self::$user_agent = (class_exists('config') && config('discogs-api.user_agent')) ? config('discogs-api.user_agent') : $_ENV['user_agent'];  
@@ -35,14 +35,10 @@ class DiscogsFactory extends OAuthSimple
 				"oauth_secret"	=> self::$access_token_secret,
         );
         
-        #var_dump(__DIR__);
-       # exit();
-
     }
     
     public static function signature($method, $endpoint, $input_parameters){
 		$oauthObject = new OAuthSimple();
-		var_dump(self::$consumer_key);exit();
 
 	    $result = $oauthObject->sign(array(
 	        'path'      => 'https://api.discogs.com/oauth/access_token',
@@ -98,7 +94,6 @@ class DiscogsFactory extends OAuthSimple
 	    }
 	    
 		$response = curl_exec($ch);
-		var_dump($response);
 		
 		if(empty($response)){
 			return array("message" => $method . " action for " . $endpoint ." done with success.");
