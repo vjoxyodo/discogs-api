@@ -19,14 +19,14 @@ class DiscogsFactory extends DiscogsOAuth
 
     public function __construct()
     {
-		self::$consumer_key = $_ENV['consumer_key']; 
-		self::$consumer_shared_secret = $_ENV['consumer_shared_secret']; 
-		self::$oauth_verifier = $_ENV['oauth_verifier']; 
-		self::$oauth_token = $_ENV['oauth_token'];
-		self::$user_agent = $_ENV['user_agent']; 
+		self::$consumer_key = config('discogs_api.consumer_key'); 
+		self::$consumer_shared_secret = config('discogs_api.consumer_shared_secret'); 
+		self::$user_agent = config('discogs_api.user_agent'); 
+		self::$oauth_verifier = config('discogs_api.oauth_verifier'); 
+		self::$oauth_token = config('discogs_api.oauth_token');
 
-		self::$access_token = $_ENV['access_token']; 
-		self::$access_token_secret = $_ENV['access_token_secret'];
+		self::$access_token = config('discogs_api.access_token'; 
+		self::$access_token_secret = config('discogs_api.access_token_secret');
 		
 		self::$oauth_props = array(
 				"oauth_token"	=> self::$access_token,
