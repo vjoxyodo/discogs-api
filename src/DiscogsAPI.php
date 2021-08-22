@@ -6,13 +6,6 @@ use Illuminate\Support\ServiceProvider;
 
 class DiscogsAPI extends DiscogsFactory
 {
-	
- 	public static $discogs_url = "https://api.discogs.com"; 
-	public static $consumer_key; 
-	public static $consumer_shared_secret; 
-	public static $access_token_secret;
-	public static $user_agent;
-
 
     public function __construct()
     {
