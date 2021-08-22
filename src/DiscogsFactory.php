@@ -25,7 +25,7 @@ class DiscogsFactory extends DiscogsOAuth
 		self::$oauth_verifier = config('discogs_api.oauth_verifier'); 
 		self::$oauth_token = config('discogs_api.oauth_token');
 
-		self::$access_token = config('discogs_api.access_token'; 
+		self::$access_token = config('discogs_api.access_token'); 
 		self::$access_token_secret = config('discogs_api.access_token_secret');
 		
 		self::$oauth_props = array(
