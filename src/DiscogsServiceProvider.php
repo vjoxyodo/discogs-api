@@ -13,7 +13,7 @@ class DiscogsServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/config/discogs.php' => config_path('discogs.php'),
+            __DIR__.'/../config/discogs-api.php' => config_path('discogs-api.php'),
         ], 'config');
     }
 
@@ -22,14 +22,19 @@ class DiscogsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/discogs.php', 'discogs');
+        $this->mergeConfigFrom(__DIR__.'/../config/discogs-api.php', 'discogs-api');
+        
 
-        $this->app->singleton('discogs', function () {
+        $this->app->singleton('discogs-api', function () {
 
-            $config = config('discogs');
+            $config = config('discogs-api');
 
-            return new DiscogsApi(app(Client::class), $config['token'], $config['headers']['User-Agent']);
+            return new DiscogsApi();
         });
+        
+		config([
+            'config/discogs-api.php',
+        ]);
 
     }
 }
