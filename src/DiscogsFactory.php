@@ -4,7 +4,7 @@ namespace Vjoxyodo\DiscogsApi;
 
 use Illuminate\Support\ServiceProvider;
 
-class DiscogsFactory extends DiscogsOAuth
+class DiscogsFactory extends OAuthSimple
 {
 
  	public static $discogs_url = "https://api.discogs.com"; 
@@ -19,14 +19,16 @@ class DiscogsFactory extends DiscogsOAuth
 
     public function __construct()
     {
-		self::$consumer_key = config('discogs-api.consumer_key'); 
-		self::$consumer_shared_secret = config('discogs-api.consumer_shared_secret'); 
-		self::$user_agent = config('discogs-api.user_agent'); 
-		self::$oauth_verifier = config('discogs-api.oauth_verifier'); 
-		self::$oauth_token = config('discogs-api.oauth_token');
+		parent::__construct();
 
-		self::$access_token = config('discogs-api.access_token'); 
-		self::$access_token_secret = config('discogs-api.access_token_secret');
+		self::$consumer_key = (class_exists('config') && config('discogs-api.consumer_key')) ? config('discogs-api.consumer_key') : $_ENV['consumer_key']; 
+		self::$consumer_shared_secret = (class_exists('config') && config('discogs-api.consumer_shared_secret')) ? config('discogs-api.consumer_shared_secret') : $_ENV['consumer_shared_secret']; 
+		self::$user_agent = (class_exists('config') && config('discogs-api.user_agent')) ? config('discogs-api.user_agent') : $_ENV['user_agent'];  
+		self::$oauth_verifier = (class_exists('config') && config('discogs-api.oauth_verifier')) ? config('discogs-api.oauth_verifier') : $_ENV['oauth_verifier'];  
+		self::$oauth_token = (class_exists('config') && config('discogs-api.oauth_token')) ? config('discogs-api.oauth_token') : $_ENV['oauth_token']; 
+
+		self::$access_token = (class_exists('config') && config('discogs-api.access_token')) ? config('discogs-api.access_token') : $_ENV['access_token']; 
+		self::$access_token_secret = (class_exists('config') && config('discogs-api.access_token_secret')) ? config('discogs-api.access_token_secret') : $_ENV['access_token_secret']; 
 		
 		self::$oauth_props = array(
 				"oauth_token"	=> self::$access_token,
@@ -40,6 +42,7 @@ class DiscogsFactory extends DiscogsOAuth
     
     public static function signature($method, $endpoint, $input_parameters){
 		$oauthObject = new OAuthSimple();
+		var_dump(self::$consumer_key);exit();
 
 	    $result = $oauthObject->sign(array(
 	        'path'      => 'https://api.discogs.com/oauth/access_token',

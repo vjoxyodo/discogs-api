@@ -43,7 +43,7 @@ class DiscogsAPI extends DiscogsFactory
 	}
 
 	public static function getUserColletionValue($username, $auth = true){
-		return self::curl("GET","/users/" . $username . "/collection/value", array(), $auth);
+		return parent::curl("GET","/users/" . $username . "/collection/value", array(), $auth);
 	}
 
 	public static function addRecordCollectionFolder($username, $folder_id, $release_id, $auth = true){

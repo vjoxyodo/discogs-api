@@ -1,6 +1,6 @@
 <?php
 
-namespace Vjoxyodo\Discogsapi;
+namespace Vjoxyodo\DiscogsApi;
 
 class OAuthSimple extends DiscogsServiceProvider
 {
@@ -18,8 +18,8 @@ class OAuthSimple extends DiscogsServiceProvider
      * @param shared_secret (String) The shared secret. This value is also usually provided by the site you wish to use.
 	 * @return OAuthSimple (Object)
      */
-    function __construct ($APIKey = "", $sharedSecret=""){
-		
+    public function __construct ($APIKey = "", $sharedSecret=""){
+	
         if (!empty($APIKey))
 		{
 			$this->_secrets['consumer_key'] = $APIKey;
