@@ -5,7 +5,7 @@
 	"keywords":[
 		"Discogs",
 		"discogs",
-    	"DiscogsAPI"
+    	"DiscogsApi"
 	],
 	"homepage":"https://github.com/vjoxyodo/discogsapi",
 	"license": "GPL-3.0-or-later",
