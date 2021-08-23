@@ -2,7 +2,6 @@
 build
 composer.lock
 docs
-/vendor/
 /tests/
 /oauth_token/
 
