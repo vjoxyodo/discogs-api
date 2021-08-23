@@ -4,7 +4,7 @@ namespace Vjoxyodo\DiscogsApi;
 
 use Illuminate\Support\ServiceProvider;
 
-class DiscogsAPI extends DiscogsFactory
+class DiscogsApi extends DiscogsFactory
 {
 
     public function __construct()
