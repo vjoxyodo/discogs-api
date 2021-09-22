@@ -1,4 +1,4 @@
-# discogs
+# DiscogsAPI
 Package for use of www.discogs.com API
 
 <p align="center">
