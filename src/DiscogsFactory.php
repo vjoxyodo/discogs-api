@@ -57,7 +57,7 @@ class DiscogsFactory extends OAuthSimple
 		
 	    $signature = $oauthObject->sign(array(
 	        'path'		=> self::$discogs_url . $endpoint, ##/database/search
-	        #'parameters'=> $input_parameters,
+	        'parameters'=> $input_parameters,
 		    'signatures'=> self::$oauth_props,
 		    'action' => $method
 	        )
@@ -82,10 +82,14 @@ class DiscogsFactory extends OAuthSimple
 		curl_setopt($ch, CURLOPT_ENCODING, "gzip");
 		curl_setopt($ch, CURLOPT_HEADER, $signature['header']); 
 		curl_setopt($ch, CURLOPT_USERAGENT, self::$user_agent);
-		curl_setopt($ch, CURLOPT_HTTPHEADER,array(                                                                          
-			'Content-Type: application/json', 
-	    	'Content-length: 0')
-	    );
+		if($auth==true){
+			curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));		
+		}else{
+			curl_setopt($ch, CURLOPT_HTTPHEADER,array(                                                                          
+				'Content-Type: application/json', 
+		    	'Content-length: 0')
+		    );
+		}
 	    if($method=="POST"){
 	    	curl_setopt($ch, CURLOPT_POST, TRUE);
 	    	#curl_setopt($ch, CURLOPT_POSTFIELDS, $input_parameters);
@@ -100,6 +104,17 @@ class DiscogsFactory extends OAuthSimple
 		}else{
 			return json_decode($response);			
 		}
+	}
+
+	public static function url_parser($options){
+		$options_url = "?";
+		$i = 0;
+		foreach($options as $key => $value){
+			$options_url.= ($i!=0 ? "&" : "") . $key . "=" . $value;
+			++$i;
+		}
+		
+		return $options_url;
 	}
 
 }
