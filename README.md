@@ -14,6 +14,7 @@ Package for use of www.discogs.com API
 	
 
 
+
 ## Discogs API Parser ##
 
 **Discogs API** is a simplified parser for the [Discogs API](https://www.discogs.com/developers)
