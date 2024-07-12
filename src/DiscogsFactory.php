@@ -34,6 +34,7 @@ class DiscogsFactory extends OAuthSimple
 				"oauth_token"	=> self::$access_token,
 				"oauth_secret"	=> self::$access_token_secret,
         );
+        
     }
     
     public static function signature($method, $endpoint, $input_parameters){
@@ -87,18 +88,19 @@ class DiscogsFactory extends OAuthSimple
 	    	'Content-length: 0');
 	    			
 		if($auth==true){
-			$headers[] = 'Authorization: Discogs token=' + self::$access_token;	
+			$headers[] = 'Authorization: Discogs token=' . self::$access_token;	
 		}
+
+		curl_setopt($ch, CURLOPT_HTTPHEADER,$headers);
 
 	    if($method=="POST"){
 	    	curl_setopt($ch, CURLOPT_POST, TRUE);
-	    	#curl_setopt($ch, CURLOPT_POSTFIELDS, $input_parameters);
 	    }else if ($method!="GET"){
 	    	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $method);
 	    }
 	    
 		$response = curl_exec($ch);
-		
+				
 		if(empty($response)){
 			return array("message" => $method . " action for " . $endpoint ." done with success.");
 		}else{
