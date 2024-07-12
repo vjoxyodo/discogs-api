@@ -34,7 +34,6 @@ class DiscogsFactory extends OAuthSimple
 				"oauth_token"	=> self::$access_token,
 				"oauth_secret"	=> self::$access_token_secret,
         );
-        
     }
     
     public static function signature($method, $endpoint, $input_parameters){
