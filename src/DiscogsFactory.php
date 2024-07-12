@@ -72,7 +72,7 @@ class DiscogsFactory extends OAuthSimple
 	
 		$ch = curl_init();
 		if($auth==true){
-			curl_setopt($ch, CURLOPT_URL, $signature['signed_url']);
+			curl_setopt($ch, CURLOPT_URL, self::$discogs_url . $endpoint);
 		}else{
 			curl_setopt($ch, CURLOPT_URL, self::$discogs_url . $endpoint);			
 		}
@@ -82,14 +82,15 @@ class DiscogsFactory extends OAuthSimple
 		curl_setopt($ch, CURLOPT_ENCODING, "gzip");
 		curl_setopt($ch, CURLOPT_HEADER, $signature['header']); 
 		curl_setopt($ch, CURLOPT_USERAGENT, self::$user_agent);
+
+		$headers = array(                                                                          
+			'Content-Type: application/json', 
+	    	'Content-length: 0');
+	    			
 		if($auth==true){
-			curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));		
-		}else{
-			curl_setopt($ch, CURLOPT_HTTPHEADER,array(                                                                          
-				'Content-Type: application/json', 
-		    	'Content-length: 0')
-		    );
+			$headers[] = 'Authorization: Discogs token=' + self::$access_token;	
 		}
+
 	    if($method=="POST"){
 	    	curl_setopt($ch, CURLOPT_POST, TRUE);
 	    	#curl_setopt($ch, CURLOPT_POSTFIELDS, $input_parameters);
