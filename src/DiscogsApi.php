@@ -272,7 +272,6 @@ USD GBP EUR CAD AUD JPY CHF MXN BRL NZD SEK ZAR
 
 	public static function deleteUserColletionFolder($username, $folder_id, $auth = true){
 		return self::curl("DELETE","/users/" . $username . "/collection/folders/" . $folder_id, array(), $auth);
-	}
-	
+	}	
 	
 }
