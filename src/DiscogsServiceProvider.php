@@ -4,7 +4,7 @@ namespace Vjoxyodo\DiscogsApi;
 
 use Illuminate\Support\ServiceProvider;
 use GuzzleHttp\Client;
-use Commands\AddDiscogsAuth;
+use Vjoxyodo\DiscogsApi\Commands\AddDiscogsAuth;
 
 class DiscogsServiceProvider extends ServiceProvider
 {

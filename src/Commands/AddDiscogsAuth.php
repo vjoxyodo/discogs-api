@@ -26,5 +26,6 @@ class AddDiscogsAuth extends Command
     public function handle(): void
     {
 	    echo "Testing Command";
+	    
     }
 }
