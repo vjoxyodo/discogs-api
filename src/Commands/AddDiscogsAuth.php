@@ -6,11 +6,7 @@ use Illuminate\Console\Command;
  
 class AddDiscogsAuth extends Command
 {
-    /**
-     * The name and signature of the console command.
-     *
-     * @var string
-     */
+
     protected $signature = 'discogsapi:userdata';
  
  
@@ -18,27 +14,18 @@ class AddDiscogsAuth extends Command
 	{
         parent::__construct();
     }
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
+
     protected $description = 'Add user tokens to Laravel .env file';
  
-    /**
-     * Execute the console command.
-     */
+
     public function handle(): void
     {
 	    
-		// Initialize variable to store the user's name
         $DISCOGS_API_ACCESS_TOKEN = '';
 
-        // Loop until a valid string is entered
         while (true) {
 		    $DISCOGS_API_ACCESS_TOKEN = $this->ask('Please insert your app token?');
 
-            // Check if the input is a valid string
             if (strlen($DISCOGS_API_ACCESS_TOKEN) == 40) {
 	            putenv('DISCOGS_API_ACCESS_TOKEN='$DISCOGS_API_ACCESS_TOKEN);
 	            $this->info("Your token {$DISCOGS_API_ACCESS_TOKEN} has been added to your project .env with success!");
