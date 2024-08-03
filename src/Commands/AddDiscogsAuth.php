@@ -1,6 +1,6 @@
 <?php
  
-namespace Vjoxyodo\DiscogsApi\AddDiscogsAuth;
+namespace Vjoxyodo\DiscogsApi\Commands;
  
 use Illuminate\Console\Command;
  
@@ -13,6 +13,11 @@ class AddDiscogsAuth extends Command
      */
     protected $signature = 'discogsapi:userdata';
  
+ 
+	public function __construct()
+	{
+        parent::__construct();
+    }
     /**
      * The console command description.
      *
@@ -25,7 +30,7 @@ class AddDiscogsAuth extends Command
      */
     public function handle(): void
     {
-	    echo "Testing Command";
+	    $this->info("Testing Command");
 	    
     }
 }

@@ -4,7 +4,6 @@ namespace Vjoxyodo\DiscogsApi;
 
 use Illuminate\Support\ServiceProvider;
 use GuzzleHttp\Client;
-use Vjoxyodo\DiscogsApi\Commands\AddDiscogsAuth;
 
 class DiscogsServiceProvider extends ServiceProvider
 {
@@ -19,7 +18,7 @@ class DiscogsServiceProvider extends ServiceProvider
         
 		if ($this->app->runningInConsole()) {
 	        $this->commands([
-	            AddDiscogsAuth::class,
+	            \Vjoxyodo\DiscogsApi\Commands\AddDiscogsAuth::class,
 	        ]);
 	    }
     }
