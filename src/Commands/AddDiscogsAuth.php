@@ -34,7 +34,6 @@ class AddDiscogsAuth extends Command
             } else {
                 $this->error('Please enter a valid 40 chars Discogs API v2.');
             }
-        }
-	    
+        }  
     }
 }
