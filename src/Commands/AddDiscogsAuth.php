@@ -1,6 +1,6 @@
 <?php
  
-namespace Vjoxyodo\DiscogsApi;
+namespace Vjoxyodo\DiscogsApi\AddDiscogsAuth;
  
 use Illuminate\Console\Command;
  
