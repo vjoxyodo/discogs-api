@@ -32,13 +32,6 @@ class AddDiscogsAuth extends Command
    
 				$file = base_path('.env');
 				
-				$this->ask("<options=bold;fg=white;bg=red>Your .env file doesn't exist!</> Do you want to create it? (yes or y) ");
-
-					exit();
-				if(!file_exists($file)){
-
-				}
-
 				$rawData = file_get_contents($file);
 				
 				$data = explode("\n",$rawData);
