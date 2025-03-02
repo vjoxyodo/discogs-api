@@ -42,22 +42,25 @@ class AddDiscogsAuth extends Command
 				
 				$answer = "no";
 				
-					
+				$insert = false;	
 				if(!empty($findCheck)){
 					$findKey = key($findCheck);
 					
 					$answer = $this->ask('You already have this env variable, are you sure you want to replace it? (yes or y)');
 					
 					if (in_array($answer, ["yes", "y"])){
+						$insert = true;
 						$data[$findKey] = $this->envConstant . "=" . $DISCOGS_API_ACCESS_TOKEN;
 					}
 					
 				}else{
+					$insert = true;
 					array_push($data, $this->envConstant . "=" . $DISCOGS_API_ACCESS_TOKEN);
 				}
 				
+				
 				if (file_exists($file)) {
-					if(in_array($answer, ["yes", "y"])){
+					if($insert){
 						file_put_contents($file, implode("\n", $data));
 						$this->info("Your token, <options=bold;fg=cyan;bg=black>" . $DISCOGS_API_ACCESS_TOKEN . "</> has been added to your project .env with success!");
 					}
